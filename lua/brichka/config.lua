@@ -1,7 +1,6 @@
 local M = {}
 
 local defaults = {
-	logging = { level = "info", use_console = false, use_file = false },
 	cmd = {
 		brichka = "brichka",
 	},
@@ -28,13 +27,6 @@ local defaults = {
 					text = value,
 					width = 0.6,
 					height = 0.6,
-					wo = {
-						spell = false,
-						wrap = false,
-						signcolumn = "yes",
-						statuscolumn = " ",
-						conceallevel = 3,
-					},
 				})
 			end,
 			error = function(message, cause)
@@ -42,13 +34,6 @@ local defaults = {
 					text = message,
 					width = 0.6,
 					height = 0.6,
-					wo = {
-						spell = false,
-						wrap = false,
-						signcolumn = "yes",
-						statuscolumn = " ",
-						conceallevel = 3,
-					},
 				})
 			end,
 		},
