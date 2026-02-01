@@ -29,8 +29,12 @@ end
 
 local function select_cluster(results_raw)
 	vim.schedule(function()
-		local clusters = vim.json.decode(results_raw.stdout)
-		vim.ui.select(clusters, { prompt = "Select cluster", format_item = format_cluster }, choose_cluster)
+		if result_raw.stderr ~= nil then
+			vim.notify(result_raw.stderr, "ERROR")
+		else
+			local clusters = vim.json.decode(results_raw.stdout)
+			vim.ui.select(clusters, { prompt = "Select cluster", format_item = format_cluster }, choose_cluster)
+		end
 	end)
 end
 

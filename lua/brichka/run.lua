@@ -17,10 +17,14 @@ local function display_result(result)
 end
 
 local function process_result(result_raw)
-	local result = vim.json.decode(result_raw.stdout)
-	vim.schedule(function()
-		display_result(result)
-	end)
+	if result_raw.stderr ~= nil then
+		vim.notify(result_raw.stderr, "ERROR")
+	else
+		local result = vim.json.decode(result_raw.stdout)
+		vim.schedule(function()
+			display_result(result)
+		end)
+	end
 end
 
 function M.run(command, language)
