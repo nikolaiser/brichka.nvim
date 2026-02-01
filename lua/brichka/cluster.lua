@@ -29,7 +29,7 @@ end
 
 local function select_cluster(results_raw)
 	vim.schedule(function()
-		if result_raw.stderr ~= "" then
+		if results_raw.stderr ~= "" then
 			vim.notify(result_raw.stderr, "ERROR")
 		else
 			local clusters = vim.json.decode(results_raw.stdout)
