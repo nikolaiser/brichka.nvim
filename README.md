@@ -6,7 +6,7 @@ Neovim plugin for [brichka](https://github.com/nikolaiser/brichka) - run code on
 
 * [brichka CLI](https://github.com/nikolaiser/brichka) installed
 * [visidata](https://www.visidata.org/) installed (default table rendering)
-* Authenticated [databricks-cli](https://github.com/databricks/cli)
+* (Optional) Authenticated [databricks-cli](https://github.com/databricks/cli)
 
 ## Installation
 
